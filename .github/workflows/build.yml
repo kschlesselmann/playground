@@ -9,6 +9,7 @@ jobs:
       - name: Build Step
         run: ./gradlew clean test
   deploy:
+    needs: build
     strategy:
       matrix:
         target: ["a", "b", "c"]
