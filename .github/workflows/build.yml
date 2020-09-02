@@ -13,6 +13,7 @@ jobs:
       matrix:
         target: ["a", "b", "c"]
     name: Deploy Job ${{ matrix.target }}
+    runs-on: ubuntu-latest
     steps:
       - name: deploy to target ${{ matrix.target }}
         run: echo "OMG it's target ${{ matrix.target }}"
