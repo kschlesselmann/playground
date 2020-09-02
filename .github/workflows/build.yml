@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Step
-        run: ./gradlew clean test
+        run: ./gradlew --debug clean test
   deploy:
     needs: build
     strategy:
