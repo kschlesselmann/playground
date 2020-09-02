@@ -7,5 +7,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build Step
-        run: ./gradlew clean build
+        run: ./gradlew clean test
+  deploy:
+    strategy:
+      matrix:
+        target: ["a", "b", "c"]
+    name: Deploy Job ${{ matrix.target }}
+    steps:
+      - name: deploy to target ${{ matrix.target }}
+        run: echo "OMG it's target ${{ matrix.target }}"
+
 
